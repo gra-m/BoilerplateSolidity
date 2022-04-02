@@ -8,27 +8,18 @@ const web3 = new Web3(ganache.provider());
  beforeEach -> Execute general setUp code
 */
 
-let car;
 beforeEach(() => {
-    car = new Car();
-});
+    // get list of all accounts
+    web3.eth.getAccounts()
+        .then(fetchedAccounts => {
+            console.log(fetchedAccounts)
+        })
+    // use an account to deploy a contract.
+})
 
-class Car {
-    park() {
-        return 'stopped';
-    }
+// Added only to run beforeEach
+describe('Inbox', () => {
+    it('deploys a contract', () => {
 
-    drive() {
-        return 'going';
-    }
-}
-
-describe('CarTest', () => {
-    it("parkFunc", () => {
-        assert.strictEqual(car.park(), 'stopped', 'Error, park return not stopped');
-    });
-    it("driveFunc", () => {
-        assert.strictEqual(car.drive(), 'going', 'Error, park return not going');
-    });
-
-});
+    })
+})

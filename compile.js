@@ -1,3 +1,5 @@
+"use strict";
+
 const path = require('path');
 const fs = require('fs');
 
@@ -5,7 +7,7 @@ const fs = require('fs');
 const inboxPath = path.resolve(__dirname, 'contracts', 'inbox.sol');
 const source = fs.readFileSync(inboxPath, 'utf8');
 
-//module.exports = compile(source, 1).contracts[':Inbox'];
+module.exports = compile(source, 1).contracts[':Inbox'];
 
 
 
